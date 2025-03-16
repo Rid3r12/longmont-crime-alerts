@@ -48,8 +48,15 @@
 
     <!-- Crime Alert Form -->
     <form action="https://formspree.io/f/mblglopv" method="POST">
+        <label for="address">Enter Address of Incident:</label><br>
+        <input type="text" id="address" name="address" required><br>
+        
+        <label for="description">Description of Suspect:</label><br>
+        <input type="text" id="description" name="description" required><br>
+        
         <label for="message">Enter Crime Report:</label><br>
         <textarea id="message" name="message" rows="4" required></textarea><br>
+        
         <button type="submit">Send Alert</button>
     </form>
 
@@ -66,3 +73,4 @@
 
 </body>
 </html>
+
