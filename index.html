@@ -1,102 +1,70 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crime Alert Hub</title>
+    <title>Longmont Crime Alerts</title>
     <style>
-        /* Dark background with red neon effect */
         body {
-            background-color: #0a0a0a;
-            color: white;
+            background-color: black;
+            color: red;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
         }
-
-        .container {
-            max-width: 500px;
-            margin: auto;
-            background: rgba(20, 20, 20, 0.9);
+        h1 {
+            color: white;
+        }
+        form {
+            background-color: #222;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px red;
-            border: 2px solid red;
+            display: inline-block;
         }
-
-        h2 {
-            color: red;
-            text-shadow: 0 0 10px red;
-        }
-
-        textarea {
+        input, textarea {
             width: 100%;
-            height: 100px;
-            margin-bottom: 15px;
             padding: 10px;
-            background: black;
-            color: white;
-            border: 2px solid red;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
         }
-
         button {
             background-color: red;
-            color: black;
-            padding: 12px;
+            color: white;
+            padding: 10px 20px;
             border: none;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
             border-radius: 5px;
-            box-shadow: 0 0 10px red;
-            transition: 0.3s;
         }
-
         button:hover {
-            background-color: black;
-            color: red;
-            box-shadow: 0 0 20px red;
+            background-color: darkred;
         }
-
-        .sms-button {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: red;
-            color: black;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px;
-            border-radius: 5px;
-            text-decoration: none;
-            box-shadow: 0 0 10px red;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .sms-button:hover {
-            background-color: black;
-            color: red;
-            box-shadow: 0 0 20px red;
-        }
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>🚨 Report a Crime 🚨</h2>
-        <p>Submit anonymous crime tips below.</p>
 
-        <!-- Send Alert Form -->
-        <form action="https://formspree.io/f/ridere0392@gmail.com" method="POST">
-            <textarea name="crimeDetails" placeholder="Describe the incident..." required></textarea><br>
-            <button type="submit">Send Alert</button>
-        </form>
+    <h1>Longmont Crime Alerts</h1>
+    <p>Report a crime anonymously.</p>
 
-        <br>
+    <!-- Crime Alert Form -->
+    <form action="https://formspree.io/f/mblglopv" method="POST">
+        <label for="message">Enter Crime Report:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Send Alert</button>
+    </form>
 
-        <!-- Send Me a Text Button -->
-        <a href="sms:7208000858?body=I want to report a crime." class="sms-button">📩 Send Me a Text</a>
-    </div>
+    <br><br>
+
+    <!-- Send SMS Alert Button -->
+    <button onclick="sendSMS()">Send Me a Text</button>
+
+    <script>
+        function sendSMS() {
+            window.location.href = "sms:+17208000858?body=I want to report a crime.";
+        }
+    </script>
+
 </body>
 </html>
+
